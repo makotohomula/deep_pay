@@ -13,3 +13,10 @@ Product.create!(
     image_url: 'hhkb.jpg',
     price: 2188.00
 )
+
+Product.create!(
+    title: 'Fashion Dress',
+    description: 'PUMA Wen Liu',
+    image_url: 'puma.jpg',
+    price: 488.00
+)
