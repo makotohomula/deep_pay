@@ -6,6 +6,10 @@ class ProductTest < ActiveSupport::TestCase
     # end
 
     # unit test
+    
+    # 加载固件
+    fixtures :products
+
     test "product attributes must not be empty" do
       product = Product.new
       assert product.invalid?
@@ -48,5 +52,17 @@ class ProductTest < ActiveSupport::TestCase
       bad.each do |name|
         assert new_product(name).invalid?, "#{name} is invalid"
       end
+    end
+
+    test "product is not valid without a unique title" do
+      product = Product.new(
+        title: products(:lion).title,
+        description: 'test',
+        price: 1,
+        image_url: 'lion.jpg'
+      )
+      assert product.invalid?
+      # assert_equal ["has already been taken"], product.errors[:title]
+      assert_equal [I18n.translate('errors.messages.taken')], product.errors[:title]
     end
 end

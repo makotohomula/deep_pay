@@ -11,3 +11,10 @@ two:
   description: MyText
   image_url: 'betu.jpg'
   price: 9.99
+
+
+lion:
+  title: lion
+  description: Mia and the White Lion
+  image_url: 'lion.jpg'
+  price: 199.99
