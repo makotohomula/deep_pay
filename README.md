@@ -22,3 +22,18 @@ Things you may want to cover:
 * Deployment instructions
 
 * Add KunchiLiu fork
+
+
+Start:
+
+* git clone git@github.com:zyiyy/deep_pay.git
+
+* cd deep_pay
+
+* rails db:imgrate
+
+* rails db:seed
+
+* rails server
+
+* Done
