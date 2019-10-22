@@ -30,7 +30,9 @@ Start:
 
 * cd deep_pay
 
-* rails db:imgrate
+* yarn install --check-files 
+
+* rails db:migrate
 
 * rails db:seed
 
