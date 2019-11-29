@@ -58,8 +58,26 @@
  
      #side {
          padding: 1em 2em;
+         width:200px;   //控制表格最大长度
          background: white;
- 
+         form, div {
+            display: inline;
+          }  
+       
+          input {
+            font-size: small;
+          }
+      
+          #cart {
+            font-size: smaller;
+            color:     black;
+      
+            table {
+              border-top:    1px dotted #FF3030;
+              border-bottom: 1px dotted #FF3030;
+              margin-bottom: 10px;
+            }
+          }
          ul {
              padding: 0;
  

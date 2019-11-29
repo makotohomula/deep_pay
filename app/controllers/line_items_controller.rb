@@ -31,7 +31,8 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|  #响应
       if @line_item.save  #如果成功保存,则返回产品添加成功的提示,即返回购物车的show页面
-        format.html { redirect_to @line_item.cart }
+        format.html { redirect_to store_index_url }
+        format.js   { @current_item = @line_item }
         format.json { render :show, status: :created, location: @line_item }
       else  #否则报错
         format.html { render :new }
