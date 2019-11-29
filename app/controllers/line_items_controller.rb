@@ -1,6 +1,6 @@
 class LineItemsController < ApplicationController
-  include CurrentCart
-  before_action :set_cart, only: [:create]
+  include CurrentCart #引入之前定义的公共方法
+  before_action :set_cart, only: [:create]  #在进行create动作之前,调用该公告方法
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   # GET /line_items
@@ -26,15 +26,14 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    product = Product.find(params[:product_id])
-    @line_item = @cart.add_product(product)
-    # @line_item = @cart.line_items.build(product: product)
+    product = Product.find(params[:product_id]) #通过产品id获得产品
+    @line_item = @cart.add_product(product) #从购物车中获取商品项
 
-    respond_to do |format|
-      if @line_item.save
+    respond_to do |format|  #响应
+      if @line_item.save  #如果成功保存,则返回产品添加成功的提示,即返回购物车的show页面
         format.html { redirect_to @line_item.cart }
         format.json { render :show, status: :created, location: @line_item }
-      else
+      else  #否则报错
         format.html { render :new }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end

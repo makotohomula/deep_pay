@@ -1,11 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README would normally document whatever steps are necessary to get the application up and running.
 
 Things you may want to cover:
 
-* Ruby version: 2.5.0
+* Ruby version: 2.3.8
 
 * System dependencies: MACOS
 
@@ -27,15 +26,10 @@ Things you may want to cover:
 Start:
 
 * git clone git@github.com:zyiyy/deep_pay.git
-
 * cd deep_pay
-
+* bundle install
 * yarn install --check-files 
-
 * rails db:migrate
-
 * rails db:seed
-
 * rails server
-
 * Done

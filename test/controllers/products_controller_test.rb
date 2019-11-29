@@ -3,11 +3,11 @@ require 'test_helper'
 class ProductsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @product = products(:one)
-    @update = {
-      title: 'title for test',
-      description: 'description for test',
-      image_url: 'betu.jpg',
-      price: 999.99
+      @update = {
+      title:       'Lorem Ipsum',
+      description: 'Wibbles are fun!',
+      image_url:   'lorem.jpg',
+      price:       19.95
     }
   end
 
@@ -44,6 +44,14 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to product_url(@product)
   end
 
+  test "can't delete product in cart" do
+    assert_difference('Product.count', 0) do  #如果产品数量不为0，则删除2号产品
+      delete product_url(products(:two))
+    end
+
+    assert_redirected_to products_url #删除产品失败，重新返回产品页面
+  end
+
   test "should destroy product" do
     assert_difference('Product.count', -1) do
       delete product_url(@product)
@@ -51,4 +59,5 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to products_url
   end
+  
 end
