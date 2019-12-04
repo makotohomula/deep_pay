@@ -25,7 +25,7 @@ Things you may want to cover:
 
 Start:
 
-* git clone git@github.com:zyiyy/deep_pay.git
+* git clone https://github.com/KunchiLiu/deep_pay
 * cd deep_pay
 * bundle install
 * yarn install --check-files 
